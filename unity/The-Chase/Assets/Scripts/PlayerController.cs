@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
+using System.Diagnostics;
 
 public class PlayerController : MonoBehaviour {
 
@@ -44,5 +45,12 @@ public class PlayerController : MonoBehaviour {
         }
 
     }
-    
+
+    void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Finish")) {
+            Stopwatch watch = GameObject.FindGameObjectWithTag("GameLoader").GetComponent<GameManager>().getStopWatch();
+            UnityEngine.Debug.Log("Player Finished, time: " + watch.ElapsedMilliseconds);
+        }
+    }
+
 }
