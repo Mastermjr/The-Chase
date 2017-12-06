@@ -6,7 +6,7 @@ https://mastermjr.github.io/The-Chase/
 
 NOTES
 index.html
-    Leaderboards
+  \t  Leaderboards
         List Maps
             Fastest Run time
     HOW TO PLAY? (Look nice)
