@@ -9,13 +9,13 @@ public class LevelManager : MonoBehaviour {
 
     private GameLevel levelSelected;
     private string levelData;
-    private GameLevel[] levels;
+    public GameLevel level;
     private int levelID;
 
 	// Use this for initialization
 	void Start () {
+        string map = "map1";
         setActive(0);
-        WebAPI.requestURL("HARDCODED_LEVEL_FETCH");
     }
 	
 	// Update is called once per frame
@@ -28,7 +28,8 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void playLevel() {
-        File.WriteAllText("./Assets/Maps/Default.map", levels[levelID].map);
+        //TODO: put in file path for map file
+        File.WriteAllText("./Assets/Maps/Default.map", "HARDCODE MAP FILEPATH");
         SceneManager.LoadScene("GamePlay");
     }
 }
