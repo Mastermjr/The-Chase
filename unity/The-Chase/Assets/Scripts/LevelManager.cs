@@ -10,9 +10,11 @@ public class LevelManager : MonoBehaviour {
     private GameLevel levelSelected;
     private string levelData;
     private GameLevel[] levels;
+    private int levelID;
 
 	// Use this for initialization
 	void Start () {
+        setActive(0);
         WebAPI.requestURL("HARDCODED_LEVEL_FETCH");
     }
 	
@@ -21,8 +23,12 @@ public class LevelManager : MonoBehaviour {
 		
 	}
 
+    public void setActive(int levelIndex) {
+        levelID = levelIndex;
+    }
+
     public void playLevel() {
-        File.WriteAllText("./Assets/Maps/Default.map", "Hey\n");//levelSelected.map);
+        File.WriteAllText("./Assets/Maps/Default.map", levels[levelID].map);
         SceneManager.LoadScene("GamePlay");
     }
 }
