@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameLevel : MonoBehaviour {
+public class GameLevel {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public string map;
+    public string desc;
+    public float highscore;
 }
