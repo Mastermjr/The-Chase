@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Linq;
 using UnityEngine;
+using System.Diagnostics;
 using UnityEngine.Networking;
 using SimpleJSON;
 
-public class WebAPI {
+public class WebAPI : MonoBehaviour {
 
     private static string fetchedString;
-
+    public static string currMap;
 
     public static IEnumerator getMap(string map) {
         string url = "https://the-chase-9c245.firebaseio.com/Maps/Map" + map + ".json";
@@ -16,8 +17,17 @@ public class WebAPI {
         yield return www.Send();
 
         //get request
-        Debug.Log("Downloaded: " + www.downloadHandler.text);
+        UnityEngine.Debug.Log("Downloaded: " + www.downloadHandler.text);
         currMap = www.downloadHandler.text;
+
+        GameManager gm = GameObject.Find("GameLoader").GetComponent<GameManager>();
+        gm.loadMap("Default.map");
+        gm.watch = Stopwatch.StartNew();
+        gm.spawnPlayer("TestPlayer", PlayerClass.Einstein);
+        gm.canvas.SetActive(false);
+
+        // Todo: call from database to get this number
+        gm.bestTime = 10f;
     }
 
     public static IEnumerator putHighScores(string url, float time) {

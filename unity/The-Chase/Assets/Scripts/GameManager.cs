@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,21 +15,23 @@ public class GameManager : MonoBehaviour {
 
     private float startX,  startY;
     private float finishX, finishY;
-    private Stopwatch watch;
-    private float bestTime;
-    private float yourTime;
-    private string displayName;
+    public Stopwatch watch;
+    public float bestTime;
+    public float yourTime;
+    public string displayName;
 
 	// Use this for initialization
 	void Start () {
+        StartCoroutine(WebAPI.getMap("1"));
+        /*
         loadMap("Default.map");
         watch = Stopwatch.StartNew();
         spawnPlayer("TestPlayer", PlayerClass.Einstein);
         canvas.SetActive(false);
 
         // Todo: call from database to get this number
-        StartCoroutine(WebAPI.getMap("1"));
         bestTime = 10f;
+        */
     }
 	
 	// Update is called once per frame
@@ -40,7 +43,7 @@ public class GameManager : MonoBehaviour {
         return watch;
     }
 
-    private void spawnPlayer(string username, PlayerClass pclass) {
+    public void spawnPlayer(string username, PlayerClass pclass) {
         GameObject player = Instantiate(Resources.Load(pclass.ToString()), new Vector3(startX, startY, 0), Quaternion.identity) as GameObject;
     }
 
@@ -69,8 +72,10 @@ public class GameManager : MonoBehaviour {
     }
 
 
-    private void loadMap(string filename) {
-        var lines = .Split(new string[] { "\n", "\r\n" }, System.StringSplitOptions.RemoveEmptyEntries);
+    public void loadMap(string filename) {
+        WebAPI.getMap(filename);
+        UnityEngine.Debug.Log(WebAPI.currMap == null);
+        var lines = Regex.Split(WebAPI.currMap, "\\+");
         int starts = 0;
         int finishes = 0;
         int xpos, ypos;
@@ -120,7 +125,10 @@ public class GameManager : MonoBehaviour {
                     case ' ':
                         xpos++;
                         continue;
+                    case '"':
+                        continue;
                     default:
+                        UnityEngine.Debug.Log(c);
                         throw new UnityException("Block Not Found");
                 }
                 GameObject go = Instantiate(Resources.Load(blockname), new Vector3(xpos, ypos, 0), Quaternion.identity) as GameObject;
