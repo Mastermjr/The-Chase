@@ -8,7 +8,6 @@ using SimpleJSON;
 public class WebAPI {
 
     private static string fetchedString;
-    public static string currMap;
 
 
     public static IEnumerator getMap(string map) {

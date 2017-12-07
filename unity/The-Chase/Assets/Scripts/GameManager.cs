@@ -70,8 +70,7 @@ public class GameManager : MonoBehaviour {
 
 
     private void loadMap(string filename) {
-        string x = WebAPI.currMap;
-        var lines = x.Split(new string[] { "\n", "\r\n" }, System.StringSplitOptions.RemoveEmptyEntries);
+        var lines = .Split(new string[] { "\n", "\r\n" }, System.StringSplitOptions.RemoveEmptyEntries);
         int starts = 0;
         int finishes = 0;
         int xpos, ypos;
