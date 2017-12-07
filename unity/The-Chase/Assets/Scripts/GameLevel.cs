@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameLevel {
 
-    public string map;
-    public string desc;
+    public string user;
     public float highscore;
 }
