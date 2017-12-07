@@ -15,7 +15,9 @@ public class GameManager : MonoBehaviour {
         loadMap("Default.map");
         watch = Stopwatch.StartNew();
         spawnPlayer("TestPlayer", PlayerClass.Einstein);
-	}
+        string x = "https://www.google.com";
+        StartCoroutine(WebAPI.Get(x));
+    }
 	
 	// Update is called once per frame
 	void Update () {

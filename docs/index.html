@@ -1,7 +1,5 @@
 <!doctype html>
 <html>
-<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-<script src = "jquery-3.2.1.min.js"></script>
 
 <head>
 <meta charset="utf-8">
@@ -9,33 +7,26 @@
 <link href="index.css" rel="stylesheet">
 </head>
 <body>
+
+<div id="bgimg">
+
+	<img src = "images/gbimg.jpg" id = "Image4">
+
+</div>
+
 <div id="title" >
 <img src="images/picture2.png" id="Image3"></div>
 
 <div id = "block1">
-	<div id="wb_Text2">
-		<span onload="getData()">Enter Your Name:</span></div>
 
-	<input type="text" id="Editbox1" name="Editbox1" value="" spellcheck="false" placeholder="Enter your name">
-
-	<input type="submit" id="Button1" name="" value="Play">
+	<form action="gameplay.html">
+		<input class="clicker" type="submit" id="Button1" name="" value="Play">
+	</form>
 	
-</div>
-
-<div id = "block2">
-
-	<div id="wb_Text3">
-	<span >Options </span></div>
-
-	<div id="wb_Image1">
-	<img src="images/cog-147414_960_720.png" id="Image1" alt=""></div>
-
-	<div id="wb_Text4" >
-	<span>Leaderboards</span></div>
-
-	<div id="wb_Image2">
-	<img src="images/624000_trophy_256x256.png" id="Image2" alt=""></div>
-
+	<form action="leaderboard.html">
+		<input class="clicker" type="submit" id="Button2" name="" value="Leaderboards">
+	</form>
+	
 </div>
 
 
