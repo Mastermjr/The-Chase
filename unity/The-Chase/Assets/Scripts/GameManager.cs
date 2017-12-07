@@ -3,20 +3,31 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
+
+    public GameObject canvas;
+    public GameObject submit;
+    public GameObject username;
 
     private float startX,  startY;
     private float finishX, finishY;
     private Stopwatch watch;
+    private float bestTime;
+    private float yourTime;
+    private string displayName;
 
 	// Use this for initialization
 	void Start () {
         loadMap("Default.map");
         watch = Stopwatch.StartNew();
         spawnPlayer("TestPlayer", PlayerClass.Einstein);
-        string x = "https://www.google.com";
-        StartCoroutine(WebAPI.Get(x));
+        canvas.SetActive(false);
+
+        // Todo: call from database to get this number
+        bestTime = 10f;
     }
 	
 	// Update is called once per frame
@@ -30,6 +41,30 @@ public class GameManager : MonoBehaviour {
 
     private void spawnPlayer(string username, PlayerClass pclass) {
         GameObject player = Instantiate(Resources.Load(pclass.ToString()), new Vector3(startX, startY, 0), Quaternion.identity) as GameObject;
+    }
+
+    public void levelFinish(float millisec) {
+        float sec = millisec / 1000f;
+        yourTime = sec;
+        canvas.SetActive(true);
+        submit.SetActive(false);
+        Text t = GameObject.Find("FinishTime").GetComponent<Text>();
+        t.text = sec.ToString("#.##") + "sec";
+        if (sec < bestTime) {
+            submit.SetActive(true);
+        }
+    }
+
+    public void restartLevel() {
+        SceneManager.LoadScene("GamePlay");
+    }
+
+    public void submitScore() {
+        // call functions to push to database, use variable: yourTime, displayName
+        bestTime = yourTime;
+        string displayName = username.GetComponent<Text>().text;
+        UnityEngine.Debug.Log("YOUR NAME:" + displayName);
+        submit.SetActive(false);
     }
 
     private void loadMap(string filename) {

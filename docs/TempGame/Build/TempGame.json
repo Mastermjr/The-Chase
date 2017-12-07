@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "TempGame.data.unityweb",
+"asmCodeUrl": "TempGame.asm.code.unityweb",
+"asmMemoryUrl": "TempGame.asm.memory.unityweb",
+"asmFrameworkUrl": "TempGame.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}

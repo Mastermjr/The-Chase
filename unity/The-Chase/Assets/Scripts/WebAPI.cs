@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -28,6 +29,6 @@ public class WebAPI {
         //levels[i] = new GameLevel();
 
         //return //array of GameLevel
-        return;
+        return Enumerable.Repeat<GameLevel>(null, 1).ToArray(); ;
     }
 }
