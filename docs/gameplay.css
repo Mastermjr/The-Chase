@@ -1,10 +1,6 @@
 body
 {
    background-color: #86C4FB;
-   background-repeat: no-repeat;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
    position: fixed;
    top: 0;
    bottom: 0;
@@ -17,7 +13,7 @@ body
 {
 	position:absolute;
 	left:50%;
-	margin-left: -750px;
+	margin-left: -737px;
 	z-index:0;
 	
 }

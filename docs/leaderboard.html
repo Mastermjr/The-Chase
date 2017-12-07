@@ -16,11 +16,36 @@
 	};
 	firebase.initializeApp(config);
 	
-	var ref = firebase.database().ref("LeaderBoards")
+	var ref = firebase.database().ref("leaderboard")
 	ref.once("value").then(function(snapshot) {
 	
-		var data = snapshot.child("Maps").val()
-		console.log(data)})
+		snapshot.forEach(function (map) {
+		
+			var str = map.child("user").val();
+			console.log(str)
+			console.log(str.length)
+		
+			appendTable = document.getElementById(map.key);
+			appendTable.innerHTML += "<tr>"
+
+			appendTable.innerHTML += "<td id=\"time\">"
+			appendTable.innerHTML += "Time: "
+			appendTable.innerHTML += map.child("time").val();
+			appendTable.innerHTML += "</td>"
+			
+			appendTable.innerHTML += "<td>"
+			appendTable.innerHTML += "User: "
+			appendTable.innerHTML += map.child("user").val();
+			appendTable.innerHTML += "</td>"
+			
+			appendTable.innerHTML += "</tr>"
+			
+		
+		
+			//appendTable.innerHTML += "</tr>"
+		
+		})
+	})
 		
 </script>
 <head>
@@ -41,7 +66,24 @@
 
 <div id = "block1">
 
+	<div id = "map1div" class="data">
+		
+		<img src="images/fff.png" id = "Image1" class = "mapImg">
 	
+		<table id="map1" >
+	
+		
+		</table>
+	</div>
+	<div id = "map2div" class="data">
+	
+		<img src = "images/fff.png" id = "Image2" class = "mapImg">
+	
+		<table id="map2" >
+	
+		
+		</table>
+	</div>
 </div>
 
 

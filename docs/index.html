@@ -1,6 +1,28 @@
 <!doctype html>
 <html>
 
+<script>
+
+	function checkInput() {
+
+		var input = document.getElementById("username");
+		if(input.value.length == 0) {
+			
+			var alertText = document.getElementById("alert");
+			alertText.style.color = '#AF3B50'
+		
+			console.log("empty");
+			
+			return false;
+		}
+		else {
+			
+			document.getElementById("login").action = "gameplay.html"
+			return true;
+		}
+	}
+</script>
+
 <head>
 <meta charset="utf-8">
 <title>the-chase</title>
@@ -19,8 +41,12 @@
 
 <div id = "block1">
 
-	<form action="gameplay.html">
+	<form onsubmit="return checkInput();" id = "login">
+		
+		<input type = "text" id="username" placeholder="What's your name?">
+		<span id="alert"> Please enter a valid player name </span>
 		<input class="clicker" type="submit" id="Button1" name="" value="Play">
+		
 	</form>
 	
 	<form action="leaderboard.html">
