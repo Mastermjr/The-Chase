@@ -12,7 +12,7 @@ public class WebAPI {
     public static IEnumerator requestURL(string url) {
         UnityWebRequest www = UnityWebRequest.Get(url);
         yield return www.Send();
-        if (www.isError) {
+        if (www.isNetworkError) {
             Debug.Log("Error: " + www.error);
         } else {
             Debug.Log("Downloaded: " + www.downloadHandler.text);

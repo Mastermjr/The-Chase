@@ -17,7 +17,8 @@
 		}
 		else {
 			
-			document.getElementById("login").action = "gameplay.html"
+			document.getElementById("login").action = "../unity/build/testbuild.html"
+			localstorage.setItem("user",input.value)
 			return true;
 		}
 	}
