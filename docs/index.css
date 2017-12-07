@@ -16,10 +16,12 @@ body
 #bgimg
 {
 	position:absolute;
-	margin-left: -5px;
+	left:50%;
+	margin-left: -750px;
 	z-index:0;
 	
 }
+
 
 #Image4
 {
