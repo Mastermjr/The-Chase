@@ -1,6 +1,101 @@
 <!doctype html>
 <html>
 
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-storage.js"></script>
+
+<script>
+	
+	var config = {
+	
+		projectId: "the-chase-9c245.appspot.com",
+		storageBucket: "the-chase-9c245.appspot.com",
+		databaseURL: "https://the-chase-9c245.firebaseio.com"
+	
+	};
+	firebase.initializeApp(config);
+	
+	var storageRef = firebase.storage().ref();
+
+	function placeHolderCheck(url) {
+	
+		if(url != "file:///C:/Users/nirma/OneDrive/Documents/The-Chase/docs/images/fff.png")
+		return true;
+	}
+	
+	
+	function loadImg1() {
+	
+		var storage = firebase.storage();
+		var storageRef = storage.ref();
+		var img1 = document.getElementById("map1")
+	
+		console.log(img1.src)
+	
+		if (placeHolderCheck(img1.src)) {
+		
+			return;
+		
+		}
+	
+		storageRef.child("Maps/images/map1.jpg").getDownloadURL().then(function(url) {
+	
+			var test = url;
+			console.log(test);
+			img1.expanded = !img1.expanded || false;
+			img1.src = test;
+			
+			return
+	
+		});
+	};
+	
+	function loadImg2() {
+	
+		var storage = firebase.storage();
+		var storageRef = storage.ref();
+		var img2 = document.getElementById("map2")
+	
+		console.log(img2.src)
+	
+		if (placeHolderCheck(img2.src)) {
+		
+			return
+		
+		}
+	
+		storageRef.child("Maps/images/map2.jpg").getDownloadURL().then(function(url) {
+	
+			var test = url;
+			console.log(test);
+			img2.expanded = !img2.expanded || false;
+			img2.src = test;
+	
+			return
+	
+		});
+	};
+	
+	function loadImg3() {
+	
+		var storage = firebase.storage();
+		var storageRef = storage.ref();
+		var img3 = document.getElementById("map3")
+	
+		storageRef.child("Maps/images/map3.jpg").getDownloadURL().then(function(url) {
+	
+			var test = url;
+			console.log(test);
+			img3.src = test;
+	
+		});
+	};
+	
+	
+</script>
 <head>
 <meta charset="utf-8">
 <title>the-chase</title>
@@ -20,6 +115,17 @@
 <div id = "block1">
 
 	<iframe id="window"></iframe>
+	
+	<img src = "images/fff.png" id = "map1" onload = "loadImg1()" class = "map">
+	<span id="maptxt1" class = "maptxt">Map 1:</span>
+	<img src = "images/fff.png" id = "map2" onload = "loadImg2()" class = "map">
+	<span id="maptxt2" class = "maptxt">Map 2:</span>
+	<img src = "images/fff.png" id = "map3" onload = "loadImg3()" class = "map">
+	<span id="maptxt3" class = "maptxt">Map 3:</span>
+	<img src = "images/fff.png" id = "map4" onload = "loadImg1()" class = "map">
+	<span id="maptxt4" class = "maptxt">Map 4:</span>
+	<img src = "images/fff.png" id = "map5" onload = "loadImg1()" class = "map">
+	<span id="maptxt5" class = "maptxt">Map 5:</span>
 	
 </div>
 

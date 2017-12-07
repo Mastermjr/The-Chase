@@ -33,7 +33,7 @@ body
    border: 0px #000000 solid;
    padding: 0;
    margin: 0;
-   top: 70px;
+   top: 40px;
    vertical-align: middle;
    left:50%;
    margin-left: -250px;
@@ -78,6 +78,92 @@ body
 	
 }
 
+.maptxt {
+	
+	position: absolute;
+	top: 410px;
+	color: #AF3B50;
+	font-size: 19px;
+}
+
+#maptxt1 {
+	
+	position:absolute;
+	left: -260px
+	
+}
+
+#maptxt2 {
+	
+	position:absolute;
+	left: -90px
+	
+}
+
+#maptxt3 {
+	
+	position:absolute;
+	left: 80px
+	
+}
+
+#maptxt4 {
+	
+	position:absolute;
+	left: 250px
+	
+}
+
+#maptxt5 {
+	
+	position:absolute;
+	left: 420px;
+	width: 100px;
+}
+
+.map {
+	
+	height: 100px;
+	width: 100px;
+	position : absolute;
+	top: 440px;
+}
+
+#map1 {
+	
+	position:absolute;
+	left: -290px;
+	
+}
+
+#map2 {
+	
+	position: absolute;
+	left: -120px;
+	
+}
+
+#map3 {
+	
+	position: absolute;
+	left: 50px;
+	
+}
+
+#map4 {
+	
+	position: absolute;
+	left: 220px;
+	
+}
+
+#map5 {
+	
+	position: absolute;
+	left: 390px;
+	
+}
+
 #window
 {
 	
@@ -85,7 +171,7 @@ body
 	left: 50%;
 	margin-left: -680px;
 	width: 1200px;
-	height: 500px;
+	height: 400px;
 	
 }
 
@@ -95,7 +181,7 @@ body
 	vertical-align: middle;
 	width:350px;
 	height: 1000px;
-	top: 170px;
+	top: 140px;
 	left: 50%;
 	margin-left:-100px;
 	
