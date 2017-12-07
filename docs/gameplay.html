@@ -85,6 +85,12 @@
 		var storageRef = storage.ref();
 		var img3 = document.getElementById("map3")
 	
+		if (placeHolderCheck(img2.src)) {
+		
+			return
+		
+		}
+	
 		storageRef.child("Maps/images/map3.jpg").getDownloadURL().then(function(url) {
 	
 			var test = url;
@@ -118,7 +124,7 @@
 <div id="title" >
 <img src="images/Picture2.png" id="Image3"></div>
 
-<div id = "block1">
+<div id = "block1" class="webgl-content">
 
 	<iframe id="window"></iframe>
 	
