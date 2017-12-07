@@ -89,35 +89,35 @@ body
 #maptxt1 {
 	
 	position:absolute;
-	left: -260px
+	left: 310px
 	
 }
 
 #maptxt2 {
 	
 	position:absolute;
-	left: -90px
+	left: 480px
 	
 }
 
 #maptxt3 {
 	
 	position:absolute;
-	left: 80px
+	left: 650px
 	
 }
 
 #maptxt4 {
 	
 	position:absolute;
-	left: 250px
+	left: 820px
 	
 }
 
 #maptxt5 {
 	
 	position:absolute;
-	left: 420px;
+	left: 990px;
 	width: 100px;
 }
 
@@ -132,35 +132,35 @@ body
 #map1 {
 	
 	position:absolute;
-	left: -290px;
+	left: 290px;
 	
 }
 
 #map2 {
 	
 	position: absolute;
-	left: -120px;
+	left: 460px;
 	
 }
 
 #map3 {
 	
 	position: absolute;
-	left: 50px;
+	left: 630px;
 	
 }
 
 #map4 {
 	
 	position: absolute;
-	left: 220px;
+	left: 800px;
 	
 }
 
 #map5 {
 	
 	position: absolute;
-	left: 390px;
+	left: 970px;
 	
 }
 
@@ -168,21 +168,20 @@ body
 {
 	
 	position:absolute;
-	left: 50%;
-	margin-left: -680px;
 	width: 1200px;
 	height: 400px;
-	
+	border : 2px #FFFFFF solid;
 }
 
 #block1 {
 	
 	position:relative;
 	vertical-align: middle;
-	width:350px;
-	height: 1000px;
+	width:1200px;
+	height: 400px;
 	top: 140px;
 	left: 50%;
-	margin-left:-100px;
+	margin-left:-680px;
+	border : 2px #FFFFFF solid;
 	
 }
