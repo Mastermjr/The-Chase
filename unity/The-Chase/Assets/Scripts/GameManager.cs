@@ -85,6 +85,24 @@ public class GameManager : MonoBehaviour {
                     case 'G':
                         blockname = "Block_Grass";
                         break;
+                    case 'T':
+                        blockname = "Block_Stone";
+                        break;
+                    case 'R':
+                        blockname = "Block_Granite";
+                        break;
+                    case 'B':
+                        blockname = "Block_Brick";
+                        break;
+                    case 'L':
+                        blockname = "Block_Log";
+                        break;
+                    case 'C':
+                        blockname = "Block_Cobble";
+                        break;
+                    case 'P':
+                        blockname = "Block_Planks";
+                        break;
                     case 'S':
                         blockname = "Block_Start";
                         startX = xpos;
