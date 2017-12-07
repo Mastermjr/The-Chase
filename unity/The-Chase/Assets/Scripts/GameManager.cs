@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(WebAPI.getMap("1"));
+        StartCoroutine(WebAPI.getMap("" + WebAPI.selectedMapID));
         /*
         loadMap("Default.map");
         watch = Stopwatch.StartNew();
@@ -57,6 +57,11 @@ public class GameManager : MonoBehaviour {
         if (sec < bestTime) {
             submit.SetActive(true);
         }
+    }
+
+    public void loadLevel(int num) {
+        WebAPI.selectedMapID = num;
+        restartLevel();
     }
 
     public void restartLevel() {

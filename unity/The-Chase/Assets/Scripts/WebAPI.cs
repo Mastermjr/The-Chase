@@ -11,6 +11,8 @@ public class WebAPI : MonoBehaviour {
     private static string fetchedString;
     public static string currMap;
 
+    public static int selectedMapID = 1;
+
     public static IEnumerator getMap(string map) {
         string url = "https://the-chase-9c245.firebaseio.com/Maps/Map" + map + ".json";
         UnityWebRequest www = UnityWebRequest.Get(url);
