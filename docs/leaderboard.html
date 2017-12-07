@@ -16,6 +16,12 @@
 	};
 	firebase.initializeApp(config);
 	
+	var ref = firebase.database().ref("LeaderBoards")
+	ref.once("value").then(function(snapshot) {
+	
+		var data = snapshot.child("Maps").val()
+		console.log(data)})
+		
 </script>
 <head>
 <meta charset="utf-8">
@@ -31,7 +37,7 @@
 </div>
 
 <div id="title" >
-<img src="images/picture2.png" id="Image3"></div>
+<img src="images/Picture2.png" id="Image3"></div>
 
 <div id = "block1">
 
