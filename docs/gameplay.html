@@ -104,11 +104,11 @@
 </script>
 <head>
 
-    <script src="TemplateData/UnityProgress.js"></script>
+   <!-- <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("window", "Build/build.json", {onProgress: UnityProgress});
-    </script>
+    </script>-->
 <meta charset="utf-8">
 <title>the-chase</title>
 <link href="gameplay.css" rel="stylesheet">
@@ -126,7 +126,7 @@
 
 <div id = "block1" class="webgl-content">
 
-	<iframe id="window"></iframe>
+	<iframe src="gamesite.html" style="border:0px #000000 none;" name="The-Chase" scrolling="no" frameborder="1" marginheight="px" marginwidth="600px" height="600px" width="960px"></iframe>
 	
 	<img src = "images/fff.png" id = "map1" onload = "loadImg1()" class = "map">
 	<span id="maptxt1" class = "maptxt">Map 1:</span>
