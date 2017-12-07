@@ -71,7 +71,6 @@ public class GameManager : MonoBehaviour {
         submit.SetActive(false);
     }
 
-
     public void loadMap(string filename) {
         WebAPI.getMap(filename);
         UnityEngine.Debug.Log(WebAPI.currMap == null);
