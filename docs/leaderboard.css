@@ -44,6 +44,7 @@ body
 	position:absolute;
 	width: 100px;
 	height: 100px;
+	top: -110px;
 	
 }
 
@@ -54,17 +55,34 @@ body
 	
 }
 
-#Image1 {
+#map2div {
 	
 	position: absolute;
-	top: -110px;
+	left: 50px;
 	
 }
 
-#Image2 {
+#map3div {
+	
+	position:absolute;
+	left: 300px;
+	top: 0px;
+	
+}
+
+#map4div {
 	
 	position: absolute;
-	top: -110px;
+	top: 200px;
+	left: -75px;
+	
+}
+
+#map5div {
+	
+	position: absolute;
+	top: 200px;
+	left: 175px;
 	
 }
 
@@ -78,6 +96,8 @@ table
 {
 	
 	border: 2px #AF3B50 solid;
+	width: 120px;
+	height: 55px;
 	
 }
 

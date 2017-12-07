@@ -49,8 +49,8 @@
 	})
 	
 	function placeHolderCheck(url) {
-	
-		if(url != "file:///C:/Users/nirma/OneDrive/Documents/The-Chase/docs/images/fff.png")
+
+		if(!(url.includes("fff.png")))
 		return true;
 	}
 	
@@ -59,7 +59,7 @@
 	
 		var storage = firebase.storage();
 		var storageRef = storage.ref();
-		var img1 = document.getElementById("Image1")
+		var img1 = document.getElementById("mapImage1")
 	
 		console.log(img1.src)
 	
@@ -85,7 +85,7 @@
 	
 		var storage = firebase.storage();
 		var storageRef = storage.ref();
-		var img2 = document.getElementById("Image2")
+		var img2 = document.getElementById("mapImage2")
 	
 		console.log(img2.src)
 	
@@ -111,7 +111,13 @@
 	
 		var storage = firebase.storage();
 		var storageRef = storage.ref();
-		var img3 = document.getElementById("Image3")
+		var img3 = document.getElementById("mapImage3")
+	
+		if (placeHolderCheck(img3.src)) {
+		
+			return
+		
+		}
 	
 		storageRef.child("Maps/images/map3.jpg").getDownloadURL().then(function(url) {
 	
@@ -122,6 +128,9 @@
 		});
 	};
 	
+	
+	
+
 </script>
 <head>
 <meta charset="utf-8">
@@ -143,7 +152,7 @@
 
 	<div id = "map1div" class="data">
 		
-		<img src="images/fff.png" id = "Image1" class = "mapImg" onload = "loadImg1()">
+		<img src="images/fff.png" id = "mapImage1" class = "mapImg" onload = "loadImg1()">
 	
 		<table id="map1" >
 	
@@ -152,13 +161,44 @@
 	</div>
 	<div id = "map2div" class="data">
 	
-		<img src = "images/fff.png" id = "Image2" class = "mapImg" onload = "loadImg2()">
+		<img src = "images/fff.png" id = "mapImage2" class = "mapImg" onload = "loadImg2()">
 	
 		<table id="map2" >
 	
 		
 		</table>
 	</div>
+	
+	<div id = "map3div" class="data">
+	
+		<img src = "images/fff.png" id = "mapImage3" class = "mapImg" onload = "loadImg3()">
+	
+		<table id="map3" >
+	
+		
+		</table>
+	</div>
+	
+	<div id = "map4div" class="data">
+	
+		<img src = "images/fff.png" id = "mapImage4" class = "mapImg">
+	
+		<table id="map4" >
+	
+		
+		</table>
+	</div>
+	
+	<div id = "map5div" class="data">
+	
+		<img src = "images/fff.png" id = "mapImage5" class = "mapImg">
+	
+		<table id="map5" >
+	
+		
+		</table>
+	</div>
+	
 </div>
 
 
